@@ -1,0 +1,25 @@
+/* -----------------------------------------------------
+	Used for modal dialog pages
+	These are primarily over-ridden values of core.css
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1.0em;
+	color: #000000;
+	background: #f7f5ef;
+	}
+	
+#content-wrapper {
+	width: 500px;
+	margin: 0 0 0 13px;
+	padding: 0 0 40px 0;
+	background-color: #f7f5ef;
+	}	
+	
+#content {
+	padding: 10px;
+	}	
+

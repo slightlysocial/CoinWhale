@@ -1,0 +1,182 @@
+<?
+function menu()
+{
+?>
+	<ul class="sf-menu"> <!-- DROPDOWN MENU -->
+		<li class="current">
+			<a href="dealList.php">Home</a><!-- First level MENU -->
+		</li>
+		<li>
+			<a href="#">Deal</a>
+			<ul>
+				<li><a href="dealList.php">Deal List</a></li>
+				<li><a href="addDeal.php">Add Deal</a></li>
+				<li><a href="addGame.php">Add Game to Deal</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Deal To User</a>
+			<ul>
+				<li><a href="freeDeal.php">Give Free Deal</a></li>
+				<li><a href="echeckDeal.php">Give E-Check Deal</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Report</a>
+			<ul>
+				
+				<li><a href="salesReport.php">Sales</a></li>
+				<li><a href="installReport.php">Click & Install</a></li>
+				<li><a href="userReport.php">Search User</a></li>
+				<li><a href="callLogReport.php">Callback Log</a></li>
+				<li><a href="latePurReport.php">Late Purchase</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Settings</a>
+			<ul>
+				<li><a href="userList.php">User List</a></li>
+				<li><a href="chPass.php">Change Password</a></li>
+				<li><a href="addUser.php">Add User</a></li>
+			</ul>
+		</li>
+	</ul>
+<?
+}
+function headerPage()
+{
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>AdminTheme - Ultimate Admin Panel Solution</title>
+	<meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="index,follow" />
+	
+    <link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+	<link rel="Stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.7.1.custom.css"  />	
+	<link type="text/css" href="css/themes/custom-theme/jquery-ui-1.8.2.custom.css" rel="stylesheet" media="screen"/>
+	<link rel="stylesheet" href="css/demo_table_jui.css" type="text/css" />
+	<!--[if IE 7]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection" /><![endif]-->
+	<!--[if IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="screen, projection" /><![endif]-->
+	<link rel="stylesheet" type="text/css" href="markitup/skins/markitup/style.css" />
+	<link rel="stylesheet" type="text/css" href="markitup/sets/default/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen">
+
+	<link href="css/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+   
+    <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.1.custom.min.js"></script>
+	<script type="text/javascript" src="js/hoverIntent.js"></script>
+	<script type="text/javascript" src="js/superfish.js"></script>
+	<script type="text/javascript" src="js/tiny_mce/tiny_mce.js"></script>
+	<script type="text/javascript" src="js/jquery.dataTables.js" language="javascript"></script>
+	<script type="text/javascript">
+		// initialise plugins
+		jQuery(function(){
+			jQuery('ul.sf-menu').superfish();
+		});
+		/*$(document).ready( function() {
+			oTable = $('#example').dataTable( {
+				"bJQueryUI": true,
+				"sPaginationType": "full_numbers"
+			} );
+			oTable.fnSort( [ [0,'desc'] ] );
+		} );*/
+	</script>
+	
+	<script type="text/javascript">
+    jQuery(document).ready(function($) {
+      $('a[rel*=facebox]').facebox({
+        loading_image : 'img/facebox/loading.gif',
+        close_image   : 'img/facebox/closelabel.gif'
+      }) 
+    })
+  </script>
+	<script type="text/javascript" src="js/excanvas.pack.js"></script>
+	<script type="text/javascript" src="js/jquery.flot.pack.js"></script>
+    <script type="text/javascript" src="markitup/jquery.markitup.pack.js"></script>
+	<script type="text/javascript" src="markitup/sets/default/set.js"></script>
+  	<script type="text/javascript" src="js/custom.js"></script>
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script src="js/facebox.js" type="text/javascript"></script>
+	
+</head>
+<body>
+<div class="container" id="container">
+    <div  id="header">
+    	<div id="profile_info">
+			<img src="img/avatar.jpg" id="avatar" alt="avatar" />
+			<p>Welcome <strong><?=$_SESSION['name']?></strong>. <a href="index.php?logout=1">Log out?</a></p>
+			<p class="last_login">Last login: <?=$_SESSION['last_login']?></p>
+		</div>
+		<div id="logo"><h1><a href="/">AdmintTheme</a></h1></div>
+		
+    </div><!-- end header -->
+	    <div id="content" >
+	    <div id="top_menu" class="clearfix">
+			<? menu(); ?>
+	    </div>
+		<div id="content_main" class="clearfix">
+			<div id="main_panel_container" class="left" style=" width:940px;">
+<?	
+}
+function footerPage()
+{
+?>
+		</div>
+			
+		</div><!-- end #content_main -->
+		   
+    <div  id="footer" class="clearfix">
+    	<p class="left">coinWhale Content Management System</p>
+		<p class="right">© 2010 by SlightlySocial</p>
+	</div><!-- end #footer -->
+</div><!-- end container -->
+
+</body>
+</html>
+<?
+}
+function login()
+{
+	if(isset($_POST['email']))
+	{
+		$email = $_POST['email'];
+		$pass = md5($_POST['pass']);
+		if(logInCheck($email,$pass)){
+			$date = date("Y-m-d H:i:s");
+			$q = "update cms_user set last_login='$date' where cuser_id='".$_SESSION['uid']."'";
+			executeQuery($q);
+			reDirect("dealList.php");
+		}
+		else{
+			return 1;
+		}
+	}
+	return 0;
+}
+function logInCheck($email,$pass)
+{
+	$q = "select * from cms_user where email='$email' and password='$pass'";
+	//echo $q; exit;
+	if($res_id=executeQuery($q))
+	{
+		if($rs=getAssocRecords($res_id))
+		{
+			//print_r($rs); exit;
+			if(isset($rs['cuser_id']))
+			{
+				$_SESSION['uid'] = $rs['cuser_id'];
+				$_SESSION['name'] = $rs['name'];
+				$_SESSION['email'] = $rs['email'];
+				$_SESSION['last_login'] = $rs['last_login'];
+				return true;
+			}
+		}
+	}
+	return false;
+}
+?>
